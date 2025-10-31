@@ -1,14 +1,20 @@
-def find_max_number (num1, num2, num3):
-   if num1>=num2 and num1>=num3:
-      return num1
-   elif num2>=num1 and num2>=num1:
-      return num2
+def find_max_number(num1, num2, num3):
+   if num1 > num2 :
+      if num1 > num3:
+        return num1
+      else:
+        return num3
    else:
-      return num3
-def find_mean (x1, x2, x3):
-    return (x1+x2+x3)/3
-def find_mean_std(x1, x2, x3):
-    mean = (x1 + x2 +x3) / 3
-    variance = ((x1-mean)**2 + (x2-mean)**2 + (x3-mean)**2) / 3
-    std = variance**0.5
+      if num2 > num3 :
+         return num2
+      else:
+         return num3
+
+def find_mean(num1, num2, num3):
+   mean = (num1 + num2 + num3)/3
+   return mean
+   
+def find_mean_std(num1, num2, num3):
+    mean = find_mean(num1, num2, num3)
+    std = (((num1 - mean)**2 + (num2 - mean)**2 + (num3 - mean)**2)/3)**0.5
     return mean, std
